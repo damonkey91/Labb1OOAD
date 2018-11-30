@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Labb1OOAD; assembly=Labb1OOAD" 
+             x:Class="Labb1OOAD.MainPage"
+             BindingContext="{local:VieModels.MainPageViewModel}"
+             BackgroundColor="{Binding ContentPageBackgroundColor}">
+    <StackLayout>
+        <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:F1}'}"/>
+        <Slider x:Name="slider" Minimum="0" Maximum="8" Value="{Binding SliderValue}"/>
+        <Button Text="Save" Command="{Binding SaveProperty}"/>
+        <Button Text="Undo" Command="{Binding UndoProperty}"/>
+        <Button Text="Redo" Command="{Binding RedoProperty}"/>
+    </StackLayout>
+</ContentPage>
